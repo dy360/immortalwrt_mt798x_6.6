@@ -57,6 +57,17 @@ glinet,gl-xe3000)
 	ucidef_set_led_netdev "wlan2g" "WLAN2G" "green:wifi2g" "phy0-ap0"
 	ucidef_set_led_netdev "wlan5g" "WLAN5G" "green:wifi5g" "phy1-ap0"
 	;;
+
+hc,cpe)
+        ucidef_set_led_timer  "wdg" "wdg" "wdg" 1000 1000
+        ucidef_set_led_netdev "wlan2g" "WLAN2G" "2gwifi" "ra0"
+        ucidef_set_led_netdev "wlan5g" "WLAN5G" "5gwifi" "rax0"
+        ucidef_set_led_timer "system" "system" "system" 333 333
+        ucidef_set_led_netdev "wan" "wan" "net" "eth1"
+        ucidef_set_led_netdev "gpy" "wan" "wan" "eth1"
+        ucidef_set_led_netdev "wwan" "wwan" "wwan" "wwan0"
+        ;;
+
 huasifei,wh3000-emmc)
 	ucidef_set_led_netdev "wan" "WAN" "red:wan" "eth1"
 	;;
