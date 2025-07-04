@@ -77,6 +77,7 @@ platform_do_upgrade() {
 	cmcc,rax3000me|\
 	cudy,tr3000-v1-ubootmod|\
 	gatonetworks,gdsp|\
+ 	hc,cpe |\
 	h3c,magic-nx30-pro|\
 	imou,lc-hx3001|\
 	jcg,q30-pro|\
@@ -200,6 +201,7 @@ platform_check_image() {
 	bananapi,bpi-r3-mini|\
 	bananapi,bpi-r4|\
 	bananapi,bpi-r4-poe|\
+ 	hc,cpe |\
 	cmcc,rax3000m|\
 	cmcc,rax3000me)
 		[ "$magic" != "d00dfeed" ] && {
