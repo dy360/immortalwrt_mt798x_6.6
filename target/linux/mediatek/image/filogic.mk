@@ -1057,6 +1057,24 @@ define Device/h3c_magic-nx30-pro-nmbm
 endef
 TARGET_DEVICES += h3c_magic-nx30-pro-nmbm
 
+define Device/hc_cpe
+  DEVICE_VENDOR := HC
+  DEVICE_MODEL := CPE
+  DEVICE_DTS := mt7981-hc-cpe
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_PACKAGES := kmod-hwmon-core kmod-hwmon-gpiofan
+  SUPPORTED_DEVICES := hc,cpe
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 114816k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += hc_cpe
+
 define Device/huasifei_wh3000-pro
   DEVICE_VENDOR := Huasifei
   DEVICE_MODEL := WH3000 Pro
